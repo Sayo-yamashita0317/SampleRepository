@@ -1,0 +1,12 @@
+Items#show
+
+<strong>name:</strong>
+<%= @item.name %>
+
+<strong>kind:</strong>
+<%= @item.kind %>
+
+<strong>purpose:</strong>
+<%= @item.purpose %>
+
+<%= link_to "アイテム一覧へ戻る", video_items_path(params[:video_id]) %>

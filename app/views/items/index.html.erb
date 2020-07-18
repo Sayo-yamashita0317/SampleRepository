@@ -1,0 +1,12 @@
+Items#index
+<%= link_to "メイクitemを投稿する", new_video_item_path(params[:video_id]) %>
+<%= link_to "動画一覧へ戻る", videos_path() %>
+
+<% @items.each do |i| %>
+  <div class='itembox'>
+  <%= i.name %>
+  <%= i.kind %>
+  <%= i.purpose%>
+  <%= link_to "アイテム詳細へ", video_item_path(params[:video_id], i.id) %>
+  </div>
+<% end %>

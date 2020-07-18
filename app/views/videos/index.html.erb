@@ -1,0 +1,27 @@
+videos#index
+<% if user_signed_in? %>
+    <%= link_to "メイク動画を投稿する", new_video_path %>
+    <%= link_to "動画を投稿する", new_movie_path %>
+    <%= link_to 'ログアウト', destroy_user_session_path, method: :delete %>
+<% else %>
+    <%= link_to "ログイン", new_user_session_path %>
+    <%= link_to "新規登録", new_user_registration_path %>
+<% end %>
+
+<%= link_to "動画一覧に行く", movies_path %>
+
+
+<div class='video-boxs'>
+    <% @videos.each do |v| %>
+        <div class='video-each'>
+          <strong>title:</strong>
+          <%= v.title %>
+          <strong>Youtube url:</strong>
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/<%= v.youtube_url%>" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <strong>Date:</strong>
+          <%= v.date %>
+          <%= link_to "item一覧へ", video_items_path(v.id) %>
+          <%= link_to "削除する", video_path(v.id), method: :delete %>
+        </div>
+    <% end %>
+</div>

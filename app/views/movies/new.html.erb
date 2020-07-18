@@ -1,0 +1,18 @@
+<%= form_for @movie do |f| %>
+   <!--ここから-->
+   <div class="field">
+      <%= f.label :video %>
+      <%= f.file_field :video %>
+    </div>
+    <div class="field">
+      <%= f.label :title %>
+      <%= f.text_field :title %>
+    </div>
+    <div class="field">
+      <%= f.label :url %>
+      <%= f.text_field :url %>
+    </div>
+　　<!--ここまで-->
+
+　  <%= f.submit "動画投稿する" %>
+　<% end %>

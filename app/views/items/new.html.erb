@@ -1,0 +1,17 @@
+<strong>メイクItem投稿</strong>
+
+<%= form_for @item,:url => {:action => :create} do |f| %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name, :size => 50 %>
+  </div>
+  <div class="field">
+    <%= f.label :kind %>
+    <%= f.select :kind, [["デパコス", "デパコス"], ["ドラコス", "ドラコス"], ["プチプラ", "プチプラ"]], include_blank: "選択して下さい" %>
+  </div>
+  <div class="field">
+    <%= f.label :purpose %>
+    <%= f.text_field :purpose, :size => 140 %>
+  </div>
+  <%= f.submit "メイクitemを投稿する" %>
+<% end %>
